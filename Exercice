@@ -1,13 +1,8 @@
-Dans votre application, créez des entités product (en se basant sur le modèle du cours et en ajoutant la date
- de création), category (en se basant sur le modèle du cours et en ajoutant la date de création) et brand.
+Dans votre application, ajouter un slug à vos articles grâce à la création d'un Data Persister.
+Ce slug devra être un peu plus aboutit que celui présenté dans l'exemple : il devra être issu du titre,
+remplacer les espaces par des tirets (et non des « + » comme dans l'exemple) et devra être unique en base de
+données.
 
-Cette dernière entité doit contenir un id, un titre, une description, une image (qui sera une chaîne de
-caractères en base de données), un statut de publication et une date de création.
-
-L'API doit proposer des tris pour les champs title et createdAt des deux entités (et le champ price de
- l'entité Product) et également proposer des filtres pour les champs isPublished de chacune des entités.
-
-
-Testez ensuite tous vos filtres et tris avec Postman. Vous devez également être en mesure de ne récupérer
-dans Postman que les produits publiés, dont la date de publication est après le 1er janvier 2021 et
-triés par prix ascendant.
+Avant de créer le slug de l'article, vous devrez utiliser dans votre Data Persister l'Article Repository,
+afin de récupérer tous les articles démarrant par le même slug. Il vous suffira alors de compter les résultats
+pour suffixer votre slug par ce compte, afin d'avoir un slug unique.
