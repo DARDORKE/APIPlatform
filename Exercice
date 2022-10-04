@@ -1,7 +1,13 @@
-Dans votre application, créez une entité Article, contenant un titre, une description, un contenu, un statut
-de publication et une date de publication.
+Dans votre application, créez des entités product (en se basant sur le modèle du cours et en ajoutant la date
+ de création), category (en se basant sur le modèle du cours et en ajoutant la date de création) et brand.
 
-Créer un filtre pour le statut de publication, et un tri pour le titre et la date de création.
+Cette dernière entité doit contenir un id, un titre, une description, une image (qui sera une chaîne de
+caractères en base de données), un statut de publication et une date de création.
 
-Testez pour voir si votre documentation d'API est fonctionnelle et testez vos différents endpoints en utilisant
- Postman.
+L'API doit proposer des tris pour les champs title et createdAt des deux entités (et le champ price de
+ l'entité Product) et également proposer des filtres pour les champs isPublished de chacune des entités.
+
+
+Testez ensuite tous vos filtres et tris avec Postman. Vous devez également être en mesure de ne récupérer
+dans Postman que les produits publiés, dont la date de publication est après le 1er janvier 2021 et
+triés par prix ascendant.
