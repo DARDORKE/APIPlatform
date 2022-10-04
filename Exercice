@@ -1,9 +1,7 @@
-Créez une nouvelle application Symfony, et installez API Platform. Créez ensuite deux entités,
-Product et Category, si possible sans utiliser la commande make:entity.
+Dans votre application, créez une entité Article, contenant un titre, une description, un contenu, un statut
+de publication et une date de publication.
 
-L'entité Product devra contenir un id, un titre, un prix et une description. L'entité Category devra elle
-contenir un id, un titre et une description. Créez ensuite les endpoints d'API de ces deux entités, en utilisant
-bien sûr API Platform.
+Créer un filtre pour le statut de publication, et un tri pour le titre et la date de création.
 
 Testez pour voir si votre documentation d'API est fonctionnelle et testez vos différents endpoints en utilisant
-Postman.
+ Postman.
