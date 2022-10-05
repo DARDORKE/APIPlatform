@@ -2,21 +2,38 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\BooleanFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
-#[ApiResource]
+#[ApiResource(paginationClientItemsPerPage: 5)]
+#[ApiFilter(BooleanFilter::class, properties: ['isPublished'])]
+#[ApiFilter(OrderFilter::class, properties: ['title'])]
+#[ApiFilter(SearchFilter::class, properties: ['title' => 'partial', 'slug' => 'exact'])]
 class Article
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Assert\NotBlank]
+    #[Assert\Length(
+        min: 10,
+        max: 255
+    )]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(
+        min: 50
+    )]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -30,7 +47,8 @@ class Article
 
 
      #[ORM\Column(type: "text", nullable: true)]
-    private $slug;
+    private mixed $slug;
+
 
     /**
      * @return mixed
