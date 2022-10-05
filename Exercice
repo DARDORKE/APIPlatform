@@ -1,8 +1,4 @@
-Dans votre application, ajouter un slug à vos articles grâce à la création d'un Data Persister.
-Ce slug devra être un peu plus aboutit que celui présenté dans l'exemple : il devra être issu du titre,
-remplacer les espaces par des tirets (et non des « + » comme dans l'exemple) et devra être unique en base de
-données.
-
-Avant de créer le slug de l'article, vous devrez utiliser dans votre Data Persister l'Article Repository,
-afin de récupérer tous les articles démarrant par le même slug. Il vous suffira alors de compter les résultats
-pour suffixer votre slug par ce compte, afin d'avoir un slug unique.
+Créez environ 20 articles dans votre application (de préférence en utilisant Postman), puis mettez en
+place la pagination pour cette ressource avec 5 articles par page. Activez également la possibilité de
+recherche sur vos articles, permettant de filtrer tous les articles avec un ou plusieurs termes contenus
+dans le titre. Activez également une recherche exacte pour le slug.
