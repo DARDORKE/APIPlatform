@@ -1,4 +1,8 @@
-Créez environ 20 articles dans votre application (de préférence en utilisant Postman), puis mettez en
-place la pagination pour cette ressource avec 5 articles par page. Activez également la possibilité de
-recherche sur vos articles, permettant de filtrer tous les articles avec un ou plusieurs termes contenus
-dans le titre. Activez également une recherche exacte pour le slug.
+Dans votre application, créez une liaison ManyToMany entre l'entité Article et l'entité
+Category créée dans le chapitre précédent.
+
+Quand un ou plusieurs articles sont demandés par le client, le client devra recevoir
+les articles en question, ainsi que les catégories reliées, mais en n'exposant que l'id de la catégorie.
+
+Le client doit aussi être capable de faire une recherche afin de ne récupérer que les articles
+ dont le titre de la catégorie correspond exactement aux termes recherchés.
